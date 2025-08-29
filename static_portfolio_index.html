@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>김승찬 — 개발자 포트폴리오</title>
+  <meta name="description" content="김승찬 개발자 포트폴리오 — 프로젝트, 기술 스택, 연락처" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>💻</text></svg>">
+  <meta property="og:title" content="김승찬 — 개발자 포트폴리오" />
+  <meta property="og:description" content="프로젝트, 기술 스택, 데모/깃허브 링크를 한눈에" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/og-cover.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <style>
+    :root{
+      --bg: #ffffff; --fg:#0a0a0a; --muted:#6b7280; --border:#e5e7eb; --accent:#2563eb; --accent-fg:#fff;
+      --chip-bg:#f5f7fb;
+    }
+    @media (prefers-color-scheme: dark){
+      :root{ --bg:#0b0b0c; --fg:#f5f5f6; --muted:#a1a1aa; --border:#1f2937; --chip-bg:#111827; }
+      img{ filter: saturate(0.98); }
+    }
+    *{ box-sizing: border-box; }
+    html,body{ margin:0; padding:0; background:var(--bg); color:var(--fg); font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Noto Sans, Apple SD Gothic Neo, "Apple SD Gothic Neo", "Noto Sans KR", Arial, "Apple Color Emoji", "Segoe UI Emoji"; }
+    a{ color: inherit; }
+    .container{ max-width:1100px; margin:0 auto; padding:24px; }
+    header{ position:sticky; top:0; backdrop-filter:saturate(180%) blur(8px); background: color-mix(in oklab, var(--bg) 92%, transparent); border-bottom:1px solid var(--border); z-index:20; }
+    .header-inner{ display:flex; align-items:center; justify-content:space-between; gap:16px; padding:16px 0; }
+    .title{ display:flex; align-items:center; gap:12px; }
+    .avatar{ width:40px; height:40px; border-radius:50%; background:#d1d5db; display:grid; place-items:center; font-weight:700; }
+    h1{ font-size:18px; margin:0; }
+    .muted{ color:var(--muted); font-size:13px; }
+    .btn{ display:inline-flex; align-items:center; gap:8px; padding:8px 14px; border:1px solid var(--border); border-radius:999px; text-decoration:none; font-size:14px; }
+    .btn.primary{ background:var(--accent); color:var(--accent-fg); border-color: transparent; }
+
+    main{ padding:24px 0 56px; }
+    section+section{ margin-top:40px; }
+
+    h2{ font-size:22px; margin:0 0 12px; }
+    p.lead{ margin:0 0 16px; color:var(--muted); }
+
+    .grid{ display:grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); gap:16px; }
+    .card{ border:1px solid var(--border); border-radius:16px; padding:14px; display:flex; flex-direction:column; gap:10px; transition: box-shadow .2s ease, transform .05s ease; }
+    .card:hover{ box-shadow: 0 6px 24px rgba(0,0,0,0.08); transform: translateY(-1px); }
+    .cover{ width:100%; height:160px; border-radius:12px; object-fit:cover; background:#1112; }
+    .card h3{ margin:0; font-size:16px; }
+    .summary{ margin:0; font-size:13px; color:var(--muted); }
+    .tags{ display:flex; flex-wrap:wrap; gap:6px; }
+    .tag{ font-size:11px; padding:4px 8px; background:var(--chip-bg); border:1px solid var(--border); border-radius:999px; }
+    .links{ display:flex; align-items:center; gap:10px; margin-top:auto; font-size:13px; }
+    .links a{ text-decoration: underline; text-underline-offset:2px; }
+
+    .contact{ display:flex; flex-wrap:wrap; gap:10px; }
+
+    footer{ border-top:1px solid var(--border); margin-top:40px; padding:16px 0; font-size:12px; color:var(--muted); }
+
+    /* Print-friendly */
+    @media print{
+      header{ position:static; }
+      .btn{ display:none; }
+      .card{ break-inside: avoid; }
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "김승찬",
+    "jobTitle": "Software Developer",
+    "url": "",
+    "sameAs": []
+  }
+  </script>
+</head>
+<body>
+  <header>
+    <div class="container header-inner">
+      <div class="title" aria-label="프로필">
+        <div class="avatar" aria-hidden="true">KS</div>
+        <div>
+          <h1>김승찬</h1>
+          <div class="muted">Backend · Full‑stack · Data</div>
+        </div>
+      </div>
+      <nav class="actions" aria-label="바로가기">
+        <a class="btn" href="#projects">프로젝트</a>
+        <a class="btn" href="#contact">연락하기</a>
+        <a class="btn primary" href="resume.pdf" download aria-label="이력서 PDF 다운로드">이력서 다운로드</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="about" aria-labelledby="about-title">
+      <h2 id="about-title">소개</h2>
+      <p class="lead">Next.js, Python(Flask), PostgreSQL, Docker를 활용해 데이터 중심의 제품을 빠르게 설계·구현합니다. 대시보드, 지표 계산, 백엔드 API, 배포 자동화까지 엔드투엔드로 수행합니다.</p>
+    </section>
+
+    <section id="projects" aria-labelledby="projects-title">
+      <h2 id="projects-title">프로젝트</h2>
+      <p class="muted" style="margin: 0 0 8px">Demo · GitHub · 상세 보기를 카드에서 확인하세요.</p>
+      <div class="grid" id="grid" aria-live="polite"></div>
+      <noscript>
+        <p class="muted">자바스크립트가 비활성화되어 카드가 보이지 않습니다. 파일 상단의 <code>PROJECTS</code> 배열을 참고하세요.</p>
+      </noscript>
+    </section>
+
+    <section id="contact" aria-labelledby="contact-title" style="margin-top:32px">
+      <h2 id="contact-title">연락하기</h2>
+      <div class="contact">
+        <a class="btn" href="mailto:you@example.com" aria-label="이메일 보내기">you@example.com</a>
+        <a class="btn" href="https://github.com/yourname" target="_blank" rel="noopener noreferrer" aria-label="GitHub 열기">GitHub</a>
+        <a class="btn" href="https://linkedin.com/in/yourname" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn 열기">LinkedIn</a>
+      </div>
+    </section>
+
+    <footer>
+      © <span id="year"></span> 김승찬. All rights reserved.
+    </footer>
+  </main>
+
+  <script>
+    // ===== 1) 여기를 수정해서 프로젝트를 관리하세요 (이미지: ./assets/ 에 넣기) =====
+    const PROJECTS = [
+      {
+        slug: "stock-info-app",
+        title: "Stock Info App",
+        summary: "Next.js + Flask + PostgreSQL 기반 주가/배당/크레딧 지표 대시보드. Docker로 멀티 컨테이너 구성 및 자동화.",
+        tags: ["Next.js","TypeScript","Flask","PostgreSQL","Docker"],
+        cover: "assets/stock-info-cover.jpg",
+        demo: "#",   // 배포 URL
+        repo: "#"    // GitHub URL
+      },
+      {
+        slug: "quant-research",
+        title: "Quant Research Toolkit",
+        summary: "yfinance/파이썬으로 DI20/MA/Dev20 등 지표 계산, 백테스트 스크립트와 리포트 생성 자동화.",
+        tags: ["Python","Pandas","Backtesting"],
+        cover: "assets/quant-toolkit.jpg",
+        demo: "#",
+        repo: "#"
+      },
+      {
+        slug: "teaching-manager",
+        title: "Teaching Manager",
+        summary: "학원 관리 웹앱: 수강/출결/강사/요금 관리. React + Spring Boot + AWS 배포.",
+        tags: ["React","Spring Boot","AWS"],
+        cover: "assets/teaching-manager.jpg",
+        demo: "#",
+        repo: "#"
+      }
+    ];
+
+    // ===== 2) 아래 템플릿으로 카드 렌더링 =====
+    const grid = document.getElementById('grid');
+    function cardTemplate(p){
+      const cover = p.cover ? `<img class="cover" alt="${p.title} 스크린샷" src="${p.cover}">` : '';
+      const tags = (p.tags||[]).map(t=>`<span class="tag">${t}</span>`).join('');
+      const demo = p.demo ? `<a href="${p.demo}" target="_blank" rel="noopener noreferrer" aria-label="${p.title} 데모 열기">Demo</a>` : '';
+      const repo = p.repo ? `<a href="${p.repo}" target="_blank" rel="noopener noreferrer" aria-label="${p.title} 깃허브 열기">GitHub</a>` : '';
+      return `
+        <article class="card" aria-labelledby="${p.slug}-title">
+          ${cover}
+          <h3 id="${p.slug}-title">${p.title}</h3>
+          <p class="summary">${p.summary}</p>
+          <div class="tags">${tags}</div>
+          <div class="links">${demo}${demo && repo ? ' · ' : ''}${repo}</div>
+        </article>
+      `;
+    }
+
+    function render(){ grid.innerHTML = PROJECTS.map(cardTemplate).join(''); }
+    render();
+
+    // footer 연도 자동
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
